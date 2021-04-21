@@ -11,14 +11,14 @@
 
 void *rot(void *a) {
 	printf("\n\t In thread PID: %d ; TID: %lu.", getpid(), (unsigned long) pthread_self());
-	int ret=a;
-	pthread_exit(ret*ret);	// no termination code
+	int aux=a;
+	pthread_exit(aux*aux);	// no termination code
 }
 
 int main() {
 	int i;	// thread counter
 	pthread_t ids[NTHREADS];	// storage of (system) Thread Identifiers
-	void *ret;
+	int ret[NTHREADS];
 	setbuf (stdout, NULL);	// only for debugging
 	printf("\nMain thread PID: %d ; TID: %lu.\n", getpid(), (unsigned long) pthread_self());
 
@@ -31,9 +31,9 @@ int main() {
 		}
 	// wait for finishing of created threads
 	for(i=0; i<NTHREADS; i++) {
-		pthread_join(ids[i], ret);	// Note: threads give no termination code
+		pthread_join(ids[i], &ret[i]);	// Note: threads give no termination code
 		printf("\nTermination of thread %d: %lu.", i, (unsigned long)ids[i]);
-		printf("\nReturn value : %d",ret);
+		printf("\nReturn value : %d",ret[i]);
 		}
 
 	printf("\n");
