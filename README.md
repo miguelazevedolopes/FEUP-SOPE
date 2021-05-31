@@ -15,5 +15,5 @@ We used concepts such as processes, and signals.
 
 ## Second Delivery
 
-Development of a Client and a Server.
+Development of a client and a server.
 We used concepts such as threads, semaphores, mutex.
