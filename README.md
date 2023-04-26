@@ -17,3 +17,7 @@ We used concepts such as processes, and signals.
 
 Development of a client and a server.
 We used concepts such as threads, semaphores, mutex.
+
+## Disclaimer
+
+This repository, and every other repository (I own) named in the format FEUP-COURSENAME on GitHub correspond to the projects I developed during my time as a student at Faculty of Engineering of University of Porto.
